@@ -1,22 +1,55 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Meta tags for character set and responsive design -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Les monuments</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-</head>
-
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" crossorigin="" />
+    <!-- Leaflet JavaScript library for interactive maps -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" crossorigin="" defer></script>
+  </head>
+  <body>
     <header>
-        <h1>Les monuments</h1>
+      <h1>Les monuments</h1>
+      <p>Cliquez sur un monument ou son bouton pour obtenir une description</p>
     </header>
-    <script type="text/javascript" src="script.js"></script>
-</body>
 
+    <section class="gallery">
+      <div class="gallery-item">
+        <button data-monument="tour-eiffel">Tour Eiffel</button>
+        <img src="images/tour_eiffel.webp" alt="Tour Eiffel" data-monument="tour-eiffel" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <button data-monument="notre-dame">Notre-Dame</button>
+        <img src="images/notre_dame.webp" alt="Notre-Dame" data-monument="notre-dame" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <button data-monument="arc-triomphe">Arc de Triomphe</button>
+        <img src="images/arc_de_triomphe.webp" alt="Arc de Triomphe" data-monument="arc-triomphe" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <button data-monument="mont-saint-michel">Mont Saint-Michel</button>
+        <img src="images/mont_saint_michel.webp" alt="Mont Saint-Michel" data-monument="mont-saint-michel" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <button data-monument="versailles">Versailles</button>
+        <img src="images/versailles.webp" alt="Versailles" data-monument="versailles" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="details">
+      <h2></h2>
+      <p><strong></strong></p>
+      <p></p>
+      <div id="mapid" style="height: 400px; width: 400px; margin-top: 20px; border: 1px solid #ddd;"></div>
+    </section>
+
+    <!-- Script for handling gallery interactions -->
+    <script src="script.js" defer></script>
+  </body>
 </html>
+
